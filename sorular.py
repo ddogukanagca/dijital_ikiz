@@ -1,3 +1,4 @@
+# İlk ölçüm soruları: beceri, C kodu, doğru şık, açıklama
 SORULAR = [
     {
         "beceri": "= ile ==",
@@ -19,7 +20,7 @@ SORULAR = [
     },
 ]
 
-
+# Zayıf beceriler için kısa anlatım ve yeni sorular
 TEKRAR = {
     "= ile ==": {
         "ders": "= değer atar, == iki değeri karşılaştırır.",
