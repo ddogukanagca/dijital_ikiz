@@ -17,6 +17,13 @@ def guncelle(bilme, dogru):
     sonrasi = biliyor / (biliyor + bilmiyor)
     return sonrasi + (1 - sonrasi) * ogrenme
 
+def cevap_al():
+    while True:
+        cevap = input(SORU_METNI).strip().upper()
+        if cevap in ["A", "B", "C", "D"]:
+            return cevap
+        print("Lütfen A, B, C ya da D yaz.")
+
 
 puanlar = {}
 
@@ -27,7 +34,7 @@ for soru in SORULAR:
 
     print()
     print(soru["kod"])
-    cevap = input(SORU_METNI)
+    cevap = cevap_al()
 
     dogru = cevap.strip().upper() == soru["dogru"]
     puanlar[beceri] = guncelle(puanlar[beceri], dogru)
@@ -55,7 +62,7 @@ for beceri, puan in puanlar.items():
     for soru in TEKRAR[beceri]["sorular"]:
         print()
         print(soru["kod"])
-        cevap = input(SORU_METNI)
+        cevap = cevap_al()
         dogru = cevap.strip().upper() == soru["dogru"]
 
         eski = puanlar[beceri]
